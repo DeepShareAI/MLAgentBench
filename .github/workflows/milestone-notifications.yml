@@ -12,5 +12,5 @@ jobs:
       env:
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
       run: |
-        curl -X POST -H 'Content-type: application/json' --data '{"text":"A milestone has been updated in the repository."}' $SLACK_WEBHOOK
+        curl -X POST --data-urlencode "payload={\"channel\": \"#my-channel-here\", \"username\": \"webhookbot\", \"text\": \"This is posted to #my-channel-here and comes from a bot named webhookbot.\", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/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
 
